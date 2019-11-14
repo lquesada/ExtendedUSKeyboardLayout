@@ -1,0 +1,100 @@
+! Copyright (c) 2019, Luis Quesada Torres - https://github.com/lquesada
+!                                           www.luisquesada.com
+!
+! Check the license at https://github.com/lquesada/ExtendedUSKeyboardLayout
+!
+! Set by running
+! $ xmodmap extus
+! Add it to the .xsession file or similar for it to take effect at startup.
+!
+! This keyboard layout is mostly US layout but allows using Alt GR to type
+! characters used in Spanish, German, French, and other languages.
+!
+! It also replaces, by default, the Menu key with a second (right-hand-side)
+! Super key, and the Caps Lock key with a second (left-hand-side) Alt GR key.
+! Scroll all the way down for full information and config on overrides.
+!
+! Features:
+! - Alt Gr + [ = `. Example: Alt Gr + [, then a = à
+! - Alt Gr + ] = ^
+! - Alt Gr + ' = ´
+! - Alt Gr + \ = ¨
+! - Alt Gr + ; = ~. Example: Alt Gr + ;, then shift+n = Ñ
+! - Alt Gr + shift + [ = °
+! - Alt Gr + shift + ] = ¯
+! - Alt Gr + shift + ' = ˝
+! - Alt Gr + shift + \ = ˘
+! - Alt Gr + shift + ; = ˇ
+! or other special characters:
+! - Alt Gr + a = æ
+! - Alt Gr + shift + a = Æ
+! - Alt Gr + o = œ
+! - Alt Gr + shift + o = Œ
+! - Alt Gr + s = ß
+! - Alt Gr + 1 = ¡
+! - Alt Gr + / = ¿
+! - Alt Gr + 3 = ·
+! - Alt Gr + shift + 3 = ¦
+! - Alt Gr + s = ß
+! - Alt Gr + e = €
+! - Alt Gr + y = ¥
+! - Alt Gr + p = £
+! - Alt Gr + c = ¢
+! - Alt Gr + r = ©
+! - Alt Gr + t = ™
+
+!!! Please note this is the diffonly version.
+!!! Assuming "us" keymap is loaded.
+
+!!! Overrides.
+
+! Accents, dead keys (only Alt Gr override)
+keycode  34 = bracketleft braceleft dead_grave dead_abovering
+keycode  35 = bracketright braceright dead_circumflex dead_macron
+keycode  47 = semicolon colon dead_tilde dead_caron
+keycode  48 = apostrophe quotedbl dead_acute dead_doubleacute
+keycode  49 = grave asciitilde dead_abovedot dead_belowdot
+keycode  51 = backslash bar dead_diaeresis dead_breve
+keycode  59 = comma less dead_horn dead_ogonek
+keycode  60 = period greater dead_cedilla dead_hook
+keycode  94 = less greater dead_greek dead_stroke
+! Missing dead keys for the record:
+! - dead_invertedbreve dead_abovecomma dead_belowbreve dead_belowcircumflex
+! - dead_belowcomma dead_dasia dead_doublegrave dead_keys dead_currency
+! - dead_iota dead_psili
+
+! Spanish symbols (only Alt Gr override)
+keycode  10 = 1 exclam exclamdown exclamdown
+keycode  61 = slash question questiondown questiondown
+
+! German symbols (only Alt Gr override)
+keycode  39 = s S ssharp ssharp
+
+! French symbols (only Alt Gr override)
+keycode  32 = o O oe OE
+keycode  38 = a A ae AE
+
+! Currency symbols (only Alt Gr override)
+keycode  26 = e E EuroSign EuroSign
+keycode  29 = y Y yen yen
+keycode  33 = p P sterling sterling
+keycode  54 = c C cent cent
+
+! Other symbols (only Alt Gr override)
+keycode  12 = 3 numbersign periodcentered brokenbar
+keycode  27 = r R copyright copyright
+keycode  28 = t T trademark trademark
+
+! Recommended: Make Menu key a second right-hand-side Super key
+keycode 135 = Super_L
+
+! Recommended: Make Caps Lock (which is evil) a second left-hand-side Alt Gr
+keycode  66 = Mode_switch
+
+! Recommended: Force Alt_R to be Alt Gr if keyboard does not have Alt Gr
+keycode  108 = Mode_switch
+
+! Recommended: Remove ISO_Next_Group and ISO_Level3_Shift that can lock Alt-Gr
+keycode  50 = Shift_L Shift_L Shift_L Shift_L
+keycode  64 = Alt_L Alt_L Alt_L Alt_L
+keycode  92 = NoSymbol NoSymbol NoSymbol NoSymbol
